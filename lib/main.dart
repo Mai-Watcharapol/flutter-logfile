@@ -41,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Future<String> _getLogFilePath() async {
-    final directory = await getDownloadsDirectory();
+    final directory = await getExternalStorageDirectory();
     final path = directory?.path;
     final logDir = Directory('$path/LOG');
     if (!await logDir.exists()) {
