@@ -29,5 +29,5 @@ class MyClass {
 }
 
 void main() {
-  MyClass("rest 1");
+  MyClass("log test 1");
 }

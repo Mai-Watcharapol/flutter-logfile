@@ -6,11 +6,10 @@ class Logger extends LoggerFactory {
 
   Logger(this._clazz);
 
-  String getLogger() {
-    return _clazz.toString();
-  }
+  String getLogger() => _clazz.toString();
 
   void info(String msg) {
     print("${fmt()} ${getLogger()} INFO - $msg");
   }
+
 }

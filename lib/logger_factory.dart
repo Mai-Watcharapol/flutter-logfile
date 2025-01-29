@@ -1,23 +1,29 @@
-import 'date_time_manager.dart';
 import 'logger.dart';
 
 class LoggerFactory {
-  int _count = 0;
-  final DateTimeManager _now = DateTimeManager();
+
+  late DateTime _now;
+
+  LoggerFactory() {
+    _now = DateTime.now();
+  }
 
   static Logger getLogger(Type clazz) => Logger(clazz);
 
-  String fmt() {
-    var num = _count;
-    _addCount();
-    print("num: $num");
-    //print("add: $");
-    return "id=${_getCount()}, ${_now.formatTime()}";
+  String getTime() {
+    int hour = _now.hour;
+    int minute = _now.minute;
+    int second = _now.second;
+    return '$hour:$minute:$second';
   }
 
-  void _addCount() => _count++;
+  String getDate() {
+    int year = _now.year;
+    int month = _now.month;
+    int day = _now.day;
+    return '$year-$month-$day';
+  }
 
-  void _resetCount() => _count = 0;
+  String fmt() => "${getDate()}T${getTime()}";
 
-  int _getCount() => _count;
 }
