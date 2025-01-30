@@ -13,3 +13,19 @@ class Logger extends LoggerFactory {
   }
 
 }
+
+
+enum Color {
+  red("แดง"),
+  green("เขียว"),
+  blue("ฟ้า");
+
+  final String hexValue;
+
+  const Color(this.hexValue);
+}
+
+void main() {
+  Color favoriteColor = Color.blue;
+  print('color name: ${favoriteColor.hexValue}');
+}
