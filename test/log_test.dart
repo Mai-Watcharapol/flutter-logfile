@@ -15,7 +15,7 @@ class MyClass {
 void main() {
   MyClass("log test 1");
   group('LoggerFactory', () {
-    test('should create a logger with the correct class name', () {
+    test('show class name', () {
 
       var logger = LoggerFactory.getLogger(MyClass);
       var className = logger.getLogger();
